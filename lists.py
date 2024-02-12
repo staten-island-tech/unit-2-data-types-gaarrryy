@@ -1,25 +1,16 @@
-n = 0
-n2 = 0
-n = float(input('what is your number?'))
-n == int(n)
-n = float(input('what is your second number?'))
-n == int(n2)
-factors = []
+n = int(input("What is your number?"))
+n2 = int(input("What is your second number?"))
 
-for i in range(1,int(n/2)):
-    if n%i == 0:
-      if i not in factors:
-         factors.append(i)
-    if n/i not in factors:
-            factors.append(int(n/i))
 
-for i in range(1,int(n2/2)):
-    if n2%i == 0:
-      if i not in factors:
-         factors.append(i)
-    if n2/i not in factors:
-            factors.append(int(n2/i))
+def gcf(n,n2):
+    if n > n2: 
+        small = n2
+    else: 
+        small = n 
+    for i in range (1, n+1):
+        if (n%i == 0) and (n2%i == 0):
+            gcf = i
 
-for i in factors:
-    print (i)
+    return(gcf)
 
+print(gcf(n,n2))
